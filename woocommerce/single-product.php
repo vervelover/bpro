@@ -32,6 +32,7 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 add_action( 'wp_enqueue_scripts', 'ap_sticky_small_summary' );
 function ap_sticky_small_summary() {
 	wp_enqueue_script( 'sticky-summary', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/sticky-summary.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'div-toggle', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/div-toggle.js', array( 'jquery' ), '1.0.1' );
 
 }
 
@@ -48,6 +49,37 @@ function ap_small_summary_close_div() {
 	// woocommerce_template_single_rating();
 	// echo '</a>';
     echo '</div>';
+}
+
+/**
+ * Remove existing tabs from single product pages.
+ */
+function ap_remove_woocommerce_product_tabs( $tabs ) {
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
+	return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'ap_remove_woocommerce_product_tabs', 98 );
+/**
+ * Hook in each tabs callback function after single content.
+ */
+add_action( 'woocommerce_after_single_product_summary', 'ap_custom_woocommerce_product_description_tab' );
+/*add_action( 'woocommerce_after_single_product_summary', 'ap_custom_comments_template' );*/
+function ap_custom_woocommerce_product_description_tab() {
+	echo '<div class="single-product-additional-info">';
+		echo '<div class="option-heading"><h2>'; _e('Product Description', 'amicamako-shop'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
+			echo '<div id="single-product-description">';
+				woocommerce_product_description_tab();
+				global $product;
+				$prodsku = $product->get_sku();
+				if ( (substr($prodsku, 0, 2)) != 'SC') {
+					_e('<strong>~ Si prega di notare quanto segue prima di ordinare ~</strong><p>* In una certa misura, graffi, rughe e non uniformità del colore provenienti dal materiale sono parte della trama del cuoio naturale: questi non sono difetti, ma garanzia della naturalità del prodotto.</br>* Il colore del prodotto reale può differire leggermente dalle immagini.</p>', 'business-pro');
+				}
+
+			echo '</div>';
+		echo '</div>';
+	echo '</div>';
 }
 
 /** Remove quantity inputs in single products */

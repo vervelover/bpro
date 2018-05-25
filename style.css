@@ -1277,6 +1277,10 @@ img.alignright,
 	        transition: all 0.75s cubic-bezier(0, 1, 0.5, 1);
 }
 
+.admin-bar header {
+	top: 32px;
+}
+
 /* ## Title Area
 --------------------------------------------- */
 .title-area {
