@@ -3,12 +3,12 @@ jQuery(document).ready(function($){
 	// Add reveal class to sticky message after 129px
 	$(document).on("scroll", function(){
 
-		if($(document).scrollTop() > 129){
+		if($(document).scrollTop() > 350){
 
 			$("#small-summary").addClass("scroll");
 			var parentwidth = $(".summary").width();
 		    $("#small-summary").width(parentwidth);
-						
+
 		} else {
 
 			$("#small-summary").removeClass("scroll");
@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
 	// distance from top of footer to top of document
 	footertotop = ($('#stop-summary').position().top);
 	// distance user has scrolled from top, adjusted to take in height of sidebar (570 pixels inc. padding)
-	scrolltop = $(document).scrollTop()+350;
+	scrolltop = $(document).scrollTop()+50;
 	// difference between the two
 	difference = scrolltop-footertotop;
 

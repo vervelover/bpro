@@ -31,8 +31,8 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 /** Enqueue JS scripts */
 add_action( 'wp_enqueue_scripts', 'ap_sticky_small_summary' );
 function ap_sticky_small_summary() {
-	wp_enqueue_script( 'sticky-summary', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/sticky-summary.js', array( 'jquery' ), '1.0.0' );
-	wp_enqueue_script( 'div-toggle', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/div-toggle.js', array( 'jquery' ), '1.0.1' );
+	wp_enqueue_script( 'sticky-summary', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/sticky-summary.min.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'div-toggle', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/min/div-toggle.min.js', array( 'jquery' ), '1.0.1' );
 
 }
 
@@ -67,8 +67,9 @@ add_filter( 'woocommerce_product_tabs', 'ap_remove_woocommerce_product_tabs', 98
 add_action( 'woocommerce_after_single_product_summary', 'ap_custom_woocommerce_product_description_tab' );
 /*add_action( 'woocommerce_after_single_product_summary', 'ap_custom_comments_template' );*/
 function ap_custom_woocommerce_product_description_tab() {
+	echo '<div id="stop-summary" style="width:100%;display:block;float:left;clear:both;"></div>';
 	echo '<div class="single-product-additional-info">';
-		echo '<div class="option-heading"><h2>'; _e('Product Description', 'amicamako-shop'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
+		echo '<div class="option-heading"><h2>'; _e('Product Description', 'business-pro'); echo'</h2><div class="arrow-up">+</div><div class="arrow-down">-</div></div><div class="option-content-first">';
 			echo '<div id="single-product-description">';
 				woocommerce_product_description_tab();
 				global $product;

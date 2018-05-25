@@ -306,6 +306,24 @@
     }
 }
 
+#small-summary, #small-summary.scroll {
+    position: static;
+    padding-top: 0;
+    max-width: 33rem;
+    z-index: 6;
+    margin-top: 0;
+    @include breakpoint(md) {
+       position: relative;
+       float: left;
+       top: 0;
+       &.scroll {
+           position: fixed;
+           top: 13rem;
+       }
+    }
+
+}
+
 
 /* ### WooCommerce Product Tabs */
 
@@ -338,6 +356,51 @@
     }
 }
 
+.single-product-additional-info {
+	width: 100%;
+	float: left;
+	margin: 2rem 0;
+	border-bottom: 1px solid $border;
+	text-align: left;
+
+    @include breakpoint(md) {
+		max-width: 48%;
+		padding: 0;
+	}
+
+	& .option-heading {
+		border-top: 1px solid $border;
+		display: block;
+		float: left;
+		width: 100%;
+		cursor: pointer;
+	}
+
+	& h2 {
+		margin: 0;
+		line-height: 1;
+		font-size: 2rem;
+		padding: 3.2rem 0 3.2rem 3.2rem;
+		margin-bottom: 0;
+		position: relative;
+		left: 0;
+		display: inline-block;
+		color: $gray;
+	}
+
+	& .option-content h2, .option-content-first h2 {
+		display: none;
+	}
+
+    & .arrow-down, .arrow-up, .arrow-up-nojquery {
+        float: right;
+    	margin-right: 3.2rem;
+    	line-height: 1;
+    	font-size: 3.2rem;
+    	padding-top: 2.7rem;
+    	color: $gray;
+    }
+}
 
 /* Two Sidebar Layouts */
 
@@ -950,4 +1013,11 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 .woocommerce.widget_recent_reviews .reviewer {
     font-size: 1.2rem;
     letter-spacing: 1px;
+}
+
+/* ### Woo Related Products */
+
+.related.products {
+    margin-top: 3rem;
+    float: left;
 }

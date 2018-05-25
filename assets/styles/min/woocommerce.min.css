@@ -162,8 +162,8 @@
 .woocommerce #content div.product div.images,
 .woocommerce-page div.product div.images,
 .woocommerce-page #content div.product div.images {
+	width: 100%;
 	float: left;
-	width: 48%;
 }
 
 .woocommerce div.product div.thumbnails,
@@ -1169,6 +1169,16 @@
 	clear: both;
 }
 
+#small-summary,
+#small-summary.scroll {
+	position: static;
+	padding-top: 0;
+	max-width: 528px;
+	max-width: 33rem;
+	z-index: 6;
+	margin-top: 0;
+}
+
 /* ### WooCommerce Product Tabs */
 .woocommerce div.product .woocommerce-tabs ul.tabs {
 	padding-left: 5px;
@@ -1204,6 +1214,56 @@
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
 	color: #1c1313;
+}
+
+.single-product-additional-info {
+	width: 100%;
+	float: left;
+	margin: 32px 0;
+	margin: 2rem 0;
+	border-bottom: 1px solid #e6e6e6;
+	text-align: left;
+}
+
+.single-product-additional-info .option-heading {
+	border-top: 1px solid #e6e6e6;
+	display: block;
+	float: left;
+	width: 100%;
+	cursor: pointer;
+}
+
+.single-product-additional-info h2 {
+	margin: 0;
+	line-height: 1;
+	font-size: 32px;
+	font-size: 2rem;
+	padding: 51.2px 0 51.2px 51.2px;
+	padding: 3.2rem 0 3.2rem 3.2rem;
+	margin-bottom: 0;
+	position: relative;
+	left: 0;
+	display: inline-block;
+	color: #4c484a;
+}
+
+.single-product-additional-info .option-content h2,
+.single-product-additional-info .option-content-first h2 {
+	display: none;
+}
+
+.single-product-additional-info .arrow-down,
+.single-product-additional-info .arrow-up,
+.single-product-additional-info .arrow-up-nojquery {
+	float: right;
+	margin-right: 51.2px;
+	margin-right: 3.2rem;
+	line-height: 1;
+	font-size: 51.2px;
+	font-size: 3.2rem;
+	padding-top: 43.2px;
+	padding-top: 2.7rem;
+	color: #4c484a;
 }
 
 /* Two Sidebar Layouts */
@@ -1934,6 +1994,13 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	font-size: 1.2rem;
 	letter-spacing: 1px;
 }
+
+/* ### Woo Related Products */
+.related.products {
+	margin-top: 48px;
+	margin-top: 3rem;
+	float: left;
+}
 @media (min-width: 512px) {
 	.woocommerce .woocommerce-ordering {
 		float: right;
@@ -1996,6 +2063,27 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 }
 @media (min-width: 896px) {
+	.woocommerce div.product div.images,
+	.woocommerce #content div.product div.images,
+	.woocommerce-page div.product div.images,
+	.woocommerce-page #content div.product div.images {
+		max-width: 48%;
+	}
+	#small-summary,
+	#small-summary.scroll {
+		position: relative;
+		float: left;
+		top: 0;
+	}
+	#small-summary.scroll,
+	#small-summary.scroll.scroll {
+		position: fixed;
+		top: 13rem;
+	}
+	.single-product-additional-info {
+		max-width: 48%;
+		padding: 0;
+	}
 	.woocommerce-cart form.checkout .col2-set,
 	.woocommerce-checkout form.checkout .col2-set,
 	#add_payment_method form.checkout .col2-set {

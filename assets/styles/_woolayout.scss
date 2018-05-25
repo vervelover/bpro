@@ -49,8 +49,11 @@
 	div.product,
 	#content div.product {
 		div.images {
+			width: 100%;
 			float: left;
-			width: 48%;
+			@include breakpoint(md) {
+				max-width: 48%;
+			}
 		}
 
 		div.thumbnails {
