@@ -122,7 +122,8 @@
     }
     .menu-item a:hover,
     .menu-item.current-menu-item > a {
-        color: $gray;
+        color: $white;
+        font-weight: $normal;
     }
     .sub-menu {
         display: none !important;

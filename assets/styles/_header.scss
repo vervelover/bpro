@@ -253,6 +253,10 @@
         background-color: transparent;
         margin-left: -1rem;
         margin-top: .1rem;
+
+        &:hover {
+            box-shadow: none;
+        }
     }
 
     &__icon {

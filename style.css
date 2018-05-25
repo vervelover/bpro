@@ -1479,6 +1479,10 @@ img.alignright,
 	margin-top: 0.1rem;
 }
 
+.product-search__button:hover {
+	box-shadow: none;
+}
+
 .product-search__icon {
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -2440,7 +2444,8 @@ p.entry-meta {
 
 .footer-widgets .menu-item a:hover,
 .footer-widgets .menu-item.current-menu-item > a {
-	color: #4c484a;
+	color: #ffffff;
+	font-weight: 400;
 }
 
 .footer-widgets .sub-menu {
