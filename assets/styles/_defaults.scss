@@ -194,6 +194,7 @@ input[type="reset"],
 input[type="submit"] {
     background-color: $dark;
     border: 0;
+    border-radius: 0;
     color: $white;
     cursor: pointer;
     font-family: $font-heading;

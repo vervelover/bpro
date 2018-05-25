@@ -28,6 +28,34 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+/** Enqueue JS scripts */
+add_action( 'wp_enqueue_scripts', 'ap_sticky_small_summary' );
+function ap_sticky_small_summary() {
+	wp_enqueue_script( 'sticky-summary', get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/sticky-summary.js', array( 'jquery' ), '1.0.0' );
+
+}
+
+// div inside summary
+
+add_action('woocommerce_single_product_summary', 'ap_small_summary_open_div', 4);
+function ap_small_summary_open_div() {
+    echo '<div id="small-summary">';
+}
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action('woocommerce_single_product_summary', 'ap_small_summary_close_div', 51);
+function ap_small_summary_close_div() {
+	// echo '<a data-rel="prettyPhoto" href="#single-product-reviews">';
+	// woocommerce_template_single_rating();
+	// echo '</a>';
+    echo '</div>';
+}
+
+/** Remove quantity inputs in single products */
+function ap_remove_all_quantity_fields( $return, $product ) {
+    return true;
+}
+add_filter( 'woocommerce_is_sold_individually', 'ap_remove_all_quantity_fields', 10, 2 );
+
 
 add_action( 'genesis_loop', 'gencwooc_single_product_loop' );
 /**
@@ -66,9 +94,9 @@ function gencwooc_single_product_loop() {
 			<?php do_action( 'woocommerce_before_single_product_summary' ); ?>
 
 			<div class="summary">
-					
+
 				<?php do_action( 'woocommerce_single_product_summary'); ?>
-		
+
 			</div>
 
 			<?php do_action( 'woocommerce_after_single_product_summary' ); ?>
