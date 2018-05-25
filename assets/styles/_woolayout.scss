@@ -103,8 +103,11 @@
 
 		div.summary {
 			float: right;
-			width: 48%;
+			width: 100%;
 			clear: none;
+			@include breakpoint(md) {
+				width: 48%;
+			}
 		}
 
 		.woocommerce-tabs {

@@ -1570,13 +1570,13 @@ img.alignright,
 }
 
 .page-header h1 {
-	max-width: 768px;
+	max-width: 48em;
 	margin: 0 auto;
 	text-transform: uppercase;
 }
 
 .page-header p {
-	max-width: 768px;
+	max-width: 48em;
 	margin: 13px auto 0;
 	margin: 1.3rem auto 0;
 }
@@ -3899,7 +3899,7 @@ p.demo_store {
 /* # Print Styles
 --------------------------------------------- */
 
-@media (min-width: 512px) {
+@media (min-width: 32em) {
 	.button + button,
 	.button + .button,
 	button + button,
@@ -3944,7 +3944,7 @@ p.demo_store {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
 	body {
 		font-size: 2rem;
 	}
@@ -4135,7 +4135,7 @@ p.demo_store {
 		padding-top: 24rem;
 	}
 	.front-page-1 .widget {
-		max-width: 768px;
+		max-width: 48em;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -4187,7 +4187,7 @@ p.demo_store {
 	}
 }
 
-@media (min-width: 896px) {
+@media (min-width: 56em) {
 	.content-sidebar-wrap {
 		padding: 5rem 0;
 		-webkit-box-orient: horizontal;
@@ -4212,7 +4212,7 @@ p.demo_store {
 		        flex-direction: row-reverse;
 	}
 	.content {
-		width: 768px;
+		width: 48em;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -4502,7 +4502,7 @@ p.demo_store {
 	}
 }
 
-@media (min-width: 1152px) {
+@media (min-width: 72em) {
 	.wp-custom-logo .title-area {
 		padding: 0;
 	}
@@ -4514,7 +4514,7 @@ p.demo_store {
 	}
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 80em) {
 	.comment-respond input[type='email'],
 	.comment-respond input[type='text'],
 	.comment-respond input[type='url'] {
@@ -4531,7 +4531,7 @@ p.demo_store {
 	}
 }
 
-@media (max-width: 896px) {
+@media (max-width: 56em) {
 	.menu-cart-menu-container ul,
 	.menu-cart-menu-container ul.alignleft,
 	.menu-cart-menu-container ul.alignright {
@@ -4553,7 +4553,7 @@ p.demo_store {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
 	.front-page-5 .listing-item {
 		margin: 0 0 3rem 0.2rem;
 		width: -webkit-calc((100% - 0.2rem) / 2);
@@ -4564,7 +4564,7 @@ p.demo_store {
 	}
 }
 
-@media (max-width: 512px) {
+@media (max-width: 32em) {
 	.front-page-5 .listing-item {
 		width: 100%;
 		margin: 0 0 5%;

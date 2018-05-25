@@ -307,21 +307,32 @@
 }
 
 #small-summary, #small-summary.scroll {
-    position: static;
-    padding-top: 0;
-    max-width: 33rem;
-    z-index: 6;
-    margin-top: 0;
+    position: relative;
+    float: left;
+    padding-top: 3rem;
+    top: 0;
+}
+
+#small-summary {
+
     @include breakpoint(md) {
-       position: relative;
-       float: left;
-       top: 0;
-       &.scroll {
-           position: fixed;
-           top: 13rem;
-       }
+        position: static;
+        padding-top: 0;
+        max-width: 63rem;
+        z-index: 6;
+        margin-top: 0;
+        &.scroll {
+            position: fixed;
+            top: 13rem;
+        }
     }
 
+}
+
+@media screen and (max-width: 56em) {
+    #small-summary.scroll {
+        margin-top: 0 !important;
+    }
 }
 
 

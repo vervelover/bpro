@@ -251,7 +251,7 @@
 .woocommerce-page div.product div.summary,
 .woocommerce-page #content div.product div.summary {
 	float: right;
-	width: 48%;
+	width: 100%;
 	clear: none;
 }
 
@@ -1171,12 +1171,11 @@
 
 #small-summary,
 #small-summary.scroll {
-	position: static;
-	padding-top: 0;
-	max-width: 528px;
-	max-width: 33rem;
-	z-index: 6;
-	margin-top: 0;
+	position: relative;
+	float: left;
+	padding-top: 48px;
+	padding-top: 3rem;
+	top: 0;
 }
 
 /* ### WooCommerce Product Tabs */
@@ -2001,7 +2000,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	margin-top: 3rem;
 	float: left;
 }
-@media (min-width: 512px) {
+@media (min-width: 32em) {
 	.woocommerce .woocommerce-ordering {
 		float: right;
 		clear: none;
@@ -2028,7 +2027,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 		margin-right: 23.0769%;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
 	.woocommerce ul.products {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -2062,21 +2061,27 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 		float: right;
 	}
 }
-@media (min-width: 896px) {
+@media (min-width: 56em) {
 	.woocommerce div.product div.images,
 	.woocommerce #content div.product div.images,
 	.woocommerce-page div.product div.images,
 	.woocommerce-page #content div.product div.images {
 		max-width: 48%;
 	}
-	#small-summary,
-	#small-summary.scroll {
-		position: relative;
-		float: left;
-		top: 0;
+	.woocommerce div.product div.summary,
+	.woocommerce #content div.product div.summary,
+	.woocommerce-page div.product div.summary,
+	.woocommerce-page #content div.product div.summary {
+		width: 48%;
 	}
-	#small-summary.scroll,
-	#small-summary.scroll.scroll {
+	#small-summary {
+		position: static;
+		padding-top: 0;
+		max-width: 63rem;
+		z-index: 6;
+		margin-top: 0;
+	}
+	#small-summary.scroll {
 		position: fixed;
 		top: 13rem;
 	}
@@ -2149,5 +2154,10 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 	.full-width .twentyfourteen .tfwc {
 		margin-right: auto;
+	}
+}
+@media screen and (max-width: 56em) {
+	#small-summary.scroll {
+		margin-top: 0 !important;
 	}
 }

@@ -9,11 +9,16 @@
  */
 
 $breakpoints: (
-	xs: 512px,
-	sm: 768px,
-	md: 896px,
-	lg: 1152px,
-	xl: 1280px
+	// xs: 512px,
+	// sm: 768px,
+	// md: 896px,
+	// lg: 1152px,
+	// xl: 1280px
+	xs: 32em,
+	sm: 48em,
+	md: 56em,
+	lg: 72em,
+	xl: 80em
 );
 
 /* ### Colors */
